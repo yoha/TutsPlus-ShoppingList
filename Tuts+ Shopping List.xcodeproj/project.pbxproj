@@ -13,6 +13,7 @@
 		65AA93C01C6CEC4600D3C944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AA93BF1C6CEC4600D3C944 /* Assets.xcassets */; };
 		65AA93C31C6CEC4600D3C944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65AA93C11C6CEC4600D3C944 /* LaunchScreen.storyboard */; };
 		65AA93CB1C6CED6F00D3C944 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */; };
+		65AA93CD1C6CF1E800D3C944 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA93CC1C6CF1E800D3C944 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		65AA93C21C6CEC4600D3C944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65AA93C41C6CEC4600D3C944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		65AA93CC1C6CF1E800D3C944 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				65AA93B81C6CEC4600D3C944 /* AppDelegate.swift */,
 				65AA93BA1C6CEC4600D3C944 /* ViewController.swift */,
 				65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */,
+				65AA93CC1C6CF1E800D3C944 /* Item.swift */,
 				65AA93BC1C6CEC4600D3C944 /* Main.storyboard */,
 				65AA93BF1C6CEC4600D3C944 /* Assets.xcassets */,
 				65AA93C11C6CEC4600D3C944 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65AA93CD1C6CF1E800D3C944 /* Item.swift in Sources */,
 				65AA93CB1C6CED6F00D3C944 /* ListTableViewController.swift in Sources */,
 				65AA93BB1C6CEC4600D3C944 /* ViewController.swift in Sources */,
 				65AA93B91C6CEC4600D3C944 /* AppDelegate.swift in Sources */,
