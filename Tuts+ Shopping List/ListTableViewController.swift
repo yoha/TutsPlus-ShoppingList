@@ -9,20 +9,44 @@
 import UIKit
 
 class ListTableViewController: UITableViewController {
+    
+    // MARK: - Stored Properties
+    
+    var items: [Item] = []
+    
+    // MARK: NSCoding Protocol Methods
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.loadItems()
+    }
+    
+    // MARK: - Helper Methods
+    
+    private func loadItems() {
+        guard let validFilePath = self.pathToSavedItemsFile() where NSFileManager.defaultManager().fileExistsAtPath(validFilePath) else { return }
+        guard let validArchivedItems = NSKeyedUnarchiver.unarchiveObjectWithFile(validFilePath) as? [Item] else { return }
+        self.items = validArchivedItems
+    }
+    
+    private func pathToSavedItemsFile() -> String? {
+        let pathsToSpecifiedDirectoryInDomain = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        guard let validFilePath = pathsToSpecifiedDirectoryInDomain.first, let validFilePathUrl = NSURL(string: validFilePath) else { return nil }
+        return validFilePathUrl.URLByAppendingPathComponent("items.plist").path
+    }
+    
+    private func saveItems() {
+        guard let validFilePathToSave = self.pathToSavedItemsFile() else { return }
+        NSKeyedArchiver.archiveRootObject(self.items, toFile: validFilePathToSave)
+    }
+    
+    // MARK: - UIViewController Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        print("items: \(self.items)")
     }
 
     // MARK: - Table view data source
