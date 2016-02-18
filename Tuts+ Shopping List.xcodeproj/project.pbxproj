@@ -14,6 +14,7 @@
 		65AA93C31C6CEC4600D3C944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65AA93C11C6CEC4600D3C944 /* LaunchScreen.storyboard */; };
 		65AA93CB1C6CED6F00D3C944 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */; };
 		65AA93CD1C6CF1E800D3C944 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA93CC1C6CF1E800D3C944 /* Item.swift */; };
+		65F2E28B1C7636DD00E5A234 /* seed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F2E28A1C7636DD00E5A234 /* seed.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		65AA93C41C6CEC4600D3C944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		65AA93CC1C6CF1E800D3C944 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		65F2E28A1C7636DD00E5A234 /* seed.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = seed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				65AA93BA1C6CEC4600D3C944 /* ViewController.swift */,
 				65AA93CA1C6CED6F00D3C944 /* ListTableViewController.swift */,
 				65AA93CC1C6CF1E800D3C944 /* Item.swift */,
+				65F2E28A1C7636DD00E5A234 /* seed.plist */,
 				65AA93BC1C6CEC4600D3C944 /* Main.storyboard */,
 				65AA93BF1C6CEC4600D3C944 /* Assets.xcassets */,
 				65AA93C11C6CEC4600D3C944 /* LaunchScreen.storyboard */,
@@ -131,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65AA93C31C6CEC4600D3C944 /* LaunchScreen.storyboard in Resources */,
+				65F2E28B1C7636DD00E5A234 /* seed.plist in Resources */,
 				65AA93C01C6CEC4600D3C944 /* Assets.xcassets in Resources */,
 				65AA93BE1C6CEC4600D3C944 /* Main.storyboard in Resources */,
 			);

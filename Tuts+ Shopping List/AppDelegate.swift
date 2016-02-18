@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        self.seedItems()
         return true
     }
 
@@ -41,6 +41,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: - Helper Methods
+    
+    private func seedItems() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if !userDefaults.boolForKey("userDefaultsSeedItems") {
+            guard let validFilePath = NSBundle.mainBundle().pathForResource("seed", ofType: "plist"), let validSeedItems = NSArray(contentsOfFile: validFilePath) else { return }
+            var items = [Item]()
+            for seedItem in validSeedItems {
+                guard let name = seedItem["name"] as? String, let price = seedItem["price"] as? Float else { return }
+                let item = Item(name: name, price: price)
+                items.append(item)
+            }
+            guard let validPathToDocumentFolder = self.locatePathForItems() else { return }
+            if NSKeyedArchiver.archiveRootObject(items, toFile: validPathToDocumentFolder) {
+                userDefaults.setBool(true, forKey: "userDefaultsSeedItems")
+            }
+        }
+    }
+    
+    private func locatePathForItems() -> String? {
+        guard let validPathToDocumentDirectory = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first, let validUrlToDocumentDirectory = NSURL(string: validPathToDocumentDirectory) else { return nil }
+        return validUrlToDocumentDirectory.URLByAppendingPathComponent("items").path
+    }
 }
 
